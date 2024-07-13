@@ -1,100 +1,103 @@
 // ~ TypeCasting Concept :-
-// #include <iostream>
-// using namespace std;
-// int main()
-// {
-//     int a = 10;
-//     char c = 'a';
-//     c = a;
-//     cout << c;
-// }
 
-// #include <iostream>
-// using namespace std;
-// int main()
-// {
-//     char c;
-//     cin >> c;
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a = 10;
+    char c = 'a';
+    c = a;
+    cout << c;
+}
 
-//     if (c == 'a')
-//     {
-//         cout << "vowel";
-//     }
+#include <iostream>
+using namespace std;
+int main()
+{
+    char c;
+    cin >> c;
 
-//     else if (c == 'e')
-//     {
-//         cout << "vowel";
-//     }
+    if (c == 'a')
+    {
+        cout << "vowel";
+    }
 
-//     else if (c == 'i')
-//     {
-//         cout << "vowel";
-//     }
+    else if (c == 'e')
+    {
+        cout << "vowel";
+    }
 
-//     else if (c == 'o')
-//     {
-//         cout << "vowel";
-//     }
+    else if (c == 'i')
+    {
+        cout << "vowel";
+    }
 
-//     else if (c == 'u')
-//     {
-//         cout << "vowel";
-//     }
-//     else
-//     {
-//         cout << "consonent";
-//     }
-//     return 0;
-// }
+    else if (c == 'o')
+    {
+        cout << "vowel";
+    }
 
-// #include <iostream>
-// using namespace std;
-// int main()
-// {
-//     char c;
-//     cin >> c;
+    else if (c == 'u')
+    {
+        cout << "vowel";
+    }
+    else
+    {
+        cout << "consonent";
+    }
+    return 0;
+}
 
-//     if (c == 'a' | c == 'e' | c == 'i' | c == 'o' | c == 'u')
-//     {
-//         cout << "vowel";
-//     }
-//     else
-//     {
-//         cout << "consonent";
-//     }
-// }
+#include <iostream>
+using namespace std;
+int main()
+{
+    char c;
+    cin >> c;
+
+    if (c == 'a' | c == 'e' | c == 'i' | c == 'o' | c == 'u')
+    {
+        cout << "vowel";
+    }
+    else
+    {
+        cout << "consonent";
+    }
+}
 
 // ! Print square from 1 to n
-// #include <iostream>
-// using namespace std;
-// int main()
-// {
-//     int n;
-//     cout << "Enter n : ";
-//     cin >> n;
 
-//     for (int i = 1; i <= n; i++)
-//     {
-//         cout << i << " "
-//              << "="
-//              << " " << i * i << endl;
-//     }
-// }
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cout << "Enter n : ";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++)
+    {
+        cout << i << " "
+            << "="
+            << " " << i * i << endl;
+    }
+}
 
 // ^ Print all even numbers up to 20;
-// #include <iostream>
-// using namespace std;
-// int main()
-// {
-//     for (int i = 1; i <= 20; i++)
-//     {
-//         if (i % 2 == 0)
-//         {
-//             cout << i << endl;
-//         }
-//     }
-//     return 0;
-// }
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    for (int i = 1; i <= 20; i++)
+    {
+        if (i % 2 == 0)
+        {
+            cout << i << endl;
+        }
+    }
+    return 0;
+}
 
 // ! Homework Start from here
 

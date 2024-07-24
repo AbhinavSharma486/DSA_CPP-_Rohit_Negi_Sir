@@ -49,6 +49,11 @@ int main()
     return 0;
 }
 
+
+
+
+
+
 // * Nth Stair :-
 
 // & Method 1 : Using Iterative method

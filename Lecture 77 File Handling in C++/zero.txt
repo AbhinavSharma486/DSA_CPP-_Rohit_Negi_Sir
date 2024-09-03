@@ -1,0 +1,4 @@
+Original data : 
+85 25 158 48 6 
+Sorter data : 
+6 25 48 85 158 

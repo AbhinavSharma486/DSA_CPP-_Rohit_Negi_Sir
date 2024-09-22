@@ -1,289 +1,293 @@
 // * Remove Nth Node from End of Linked List :-
 
-// #include <iostream>
-// #include <vector>
-// using namespace std;
+#include <iostream>
+#include <vector>
+using namespace std;
 
-// class ListNode
-// {
-// public:
-//   int val;
+class ListNode
+{
+public:
+  int val;
 
-//   ListNode *next;
+  ListNode *next;
 
-//   ListNode(int data)
-//   {
-//     val = data;
-//     next = NULL;
-//   }
-// };
+  ListNode(int data)
+  {
+    val = data;
+    next = NULL;
+  }
+};
 
-// ListNode *CreateLinkedList(int arr[], int index, int size)
-// {
-//   if (index == size)
-//   {
-//     return NULL;
-//   }
+ListNode *CreateLinkedList(int arr[], int index, int size)
+{
+  if (index == size)
+  {
+    return NULL;
+  }
 
-//   ListNode *temp = new ListNode(arr[index]);
-//   temp->next = CreateLinkedList(arr, index + 1, size);
-//   return temp;
-// }
+  ListNode *temp = new ListNode(arr[index]);
+  temp->next = CreateLinkedList(arr, index + 1, size);
+  return temp;
+}
 
-// ListNode *deleteKNode(ListNode *head, int n)
-// {
-//   int count = 0;
-//   ListNode *temp = head;
+ListNode *deleteKNode(ListNode *head, int n)
+{
+  int count = 0;
+  ListNode *temp = head;
 
-//   // & count total number of listnodes
-//   while (temp)
-//   {
-//     count++;
-//     temp = temp->next;
-//   }
+  // & count total number of listnodes
+  while (temp)
+  {
+    count++;
+    temp = temp->next;
+  }
 
-//   count -= n;
+  count -= n;
 
-//   if (count == 0)
-//   {
-//     temp = head;
-//     head = head->next;
-//     delete temp;
-//     return head;
-//   }
+  if (count == 0)
+  {
+    temp = head;
+    head = head->next;
+    delete temp;
+    return head;
+  }
 
-//   ListNode *curr = head, *prev = NULL;
+  ListNode *curr = head, *prev = NULL;
 
-//   while (count--)
-//   {
-//     prev = curr;
-//     curr = curr->next;
-//   }
+  while (count--)
+  {
+    prev = curr;
+    curr = curr->next;
+  }
 
-//   prev->next = curr->next;
-//   delete curr;
+  prev->next = curr->next;
+  delete curr;
 
-//   return head;
-// }
+  return head;
+}
 
-// int main()
-// {
-//   ListNode *Head = NULL;
+int main()
+{
+  ListNode *Head = NULL;
 
-//   int arr[] = {10, 20, 30, 40, 50};
+  int arr[] = {10, 20, 30, 40, 50};
 
-//   Head = CreateLinkedList(arr, 0, 5);
+  Head = CreateLinkedList(arr, 0, 5);
 
-//   int n;
-//   cout << "Enter n : ";
-//   cin >> n;
+  int n;
+  cout << "Enter n : ";
+  cin >> n;
 
-//   cout << "After removing Nth node from End of Linked List : ";
+  cout << "After removing Nth node from End of Linked List : ";
 
-//   Head = deleteKNode(Head, n);
+  Head = deleteKNode(Head, n);
 
-//   while (Head)
-//   {
-//     cout << Head->val << " ";
-//     Head = Head->next;
-//   }
+  while (Head)
+  {
+    cout << Head->val << " ";
+    Head = Head->next;
+  }
 
-//   return 0;
-// }
+  return 0;
+}
 
 // * Remove Every Kth Node from Linked List :-
 
-// #include <iostream>
-// #include <vector>
-// using namespace std;
+#include <iostream>
+#include <vector>
+using namespace std;
 
-// class Node
-// {
-// public:
-//   int val;
+class Node
+{
+public:
+  int val;
 
-//   Node *next;
+  Node *next;
 
-//   Node(int data)
-//   {
-//     val = data;
-//     next = NULL;
-//   }
-// };
+  Node(int data)
+  {
+    val = data;
+    next = NULL;
+  }
+};
 
-// Node *CreateLinkedList(int arr[], int index, int size)
-// {
-//   if (index == size)
-//   {
-//     return NULL;
-//   }
+Node *CreateLinkedList(int arr[], int index, int size)
+{
+  if (index == size)
+  {
+    return NULL;
+  }
 
-//   Node *temp = new Node(arr[index]);
-//   temp->next = CreateLinkedList(arr, index + 1, size);
-//   return temp;
-// }
+  Node *temp = new Node(arr[index]);
+  temp->next = CreateLinkedList(arr, index + 1, size);
+  return temp;
+}
 
-// Node *deleteKNode(Node *head, int k)
-// {
-//   if (k == 1)
-//   {
-//     return NULL;
-//   }
+Node *deleteKNode(Node *head, int k)
+{
+  if (k == 1)
+  {
+    return NULL;
+  }
 
-//   Node *curr = head, *prev = NULL;
-//   int count = 1;
+  Node *curr = head, *prev = NULL;
+  int count = 1;
 
-//   while (curr)
-//   {
-//     // & when k == count , delete this node
-//     if (k == count)
-//     {
-//       prev->next = curr->next;
-//       delete curr;
-//       curr = prev->next;
-//       count = 1;
-//     }
-//     // & when k !== count, skip this node
-//     else
-//     {
-//       prev = curr;
-//       curr = curr->next;
-//       count++;
-//     }
-//   }
+  while (curr)
+  {
+    // & when k == count , delete this node
+    if (k == count)
+    {
+      prev->next = curr->next;
+      delete curr;
+      curr = prev->next;
+      count = 1;
+    }
+    // & when k !== count, skip this node
+    else
+    {
+      prev = curr;
+      curr = curr->next;
+      count++;
+    }
+  }
 
-//   return head;
-// }
+  return head;
+}
 
-// int main()
-// {
-//   Node *Head = NULL;
+int main()
+{
+  Node *Head = NULL;
 
-//   int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+  int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-//   Head = CreateLinkedList(arr, 0, 10);
+  Head = CreateLinkedList(arr, 0, 10);
 
-//   int k;
-//   cout << "Enter k : ";
-//   cin >> k;
+  int k;
+  cout << "Enter k : ";
+  cin >> k;
 
-//   cout << "After removing kth node from Linked List : ";
+  cout << "After removing kth node from Linked List : ";
 
-//   Head = deleteKNode(Head, k);
+  Head = deleteKNode(Head, k);
 
-//   while (Head)
-//   {
-//     cout << Head->val << " ";
-//     Head = Head->next;
-//   }
+  while (Head)
+  {
+    cout << Head->val << " ";
+    Head = Head->next;
+  }
 
-//   return 0;
-// }
+  return 0;
+}
 
 // * Rotate Linked List :-
 
-// #include <iostream>
-// #include <vector>
-// using namespace std;
+#include <iostream>
+#include <vector>
+using namespace std;
 
-// class ListNode
-// {
-// public:
-//   int val;
+class ListNode
+{
+public:
+  int val;
 
-//   ListNode *next;
+  ListNode *next;
 
-//   ListNode(int data)
-//   {
-//     val = data;
-//     next = NULL;
-//   }
-// };
+  ListNode(int data)
+  {
+    val = data;
+    next = NULL;
+  }
+};
 
-// ListNode *CreateLinkedList(int arr[], int index, int size)
-// {
-//   if (index == size)
-//   {
-//     return NULL;
-//   }
+ListNode *CreateLinkedList(int arr[], int index, int size)
+{
+  if (index == size)
+  {
+    return NULL;
+  }
 
-//   ListNode *temp = new ListNode(arr[index]);
-//   temp->next = CreateLinkedList(arr, index + 1, size);
-//   return temp;
-// }
+  ListNode *temp = new ListNode(arr[index]);
+  temp->next = CreateLinkedList(arr, index + 1, size);
+  return temp;
+}
 
-// ListNode *rotateRight(ListNode *head, int k)
-// {
-//   if (head == NULL || head->next == NULL)
-//   {
-//     return head;
-//   }
+ListNode *rotateRight(ListNode *head, int k)
+{
+  if (head == NULL || head->next == NULL)
+  {
+    return head;
+  }
 
-//   // ^ count no. of nodes
-//   int count = 0;
-//   ListNode *temp = head;
+  // ^ count no. of nodes
+  int count = 0;
+  ListNode *temp = head;
 
-//   while (temp)
-//   {
-//     count++;
-//     temp = temp->next;
-//   }
+  while (temp)
+  {
+    count++;
+    temp = temp->next;
+  }
 
-//   k = k % count;
-//   if (k == 0)
-//   {
-//     return head;
-//   }
+  k = k % count;
+  if (k == 0)
+  {
+    return head;
+  }
 
-//   count -= k;
-//   ListNode *curr = head, *prev = NULL;
+  count -= k;
+  ListNode *curr = head, *prev = NULL;
 
-//   while (count--)
-//   {
-//     prev = curr;
-//     curr = curr->next;
-//   }
+  while (count--)
+  {
+    prev = curr;
+    curr = curr->next;
+  }
 
-//   prev->next = NULL;
-//   ListNode *Tail = curr;
+  prev->next = NULL;
+  ListNode *Tail = curr;
 
-//   // ^ Second list uske last node pe lake jao
+  // ^ Second list uske last node pe lake jao
 
-//   while (Tail->next != NULL)
-//   {
-//     Tail = Tail->next;
-//   }
+  while (Tail->next != NULL)
+  {
+    Tail = Tail->next;
+  }
 
-//   Tail->next = head;
+  Tail->next = head;
 
-//   head = curr;
-//   return head;
-// }
+  head = curr;
+  return head;
+}
 
-// int main()
-// {
-//   ListNode *Head = NULL;
+int main()
+{
+  ListNode *Head = NULL;
 
-//   int arr[] = {10, 20, 30, 40, 50};
+  int arr[] = {10, 20, 30, 40, 50};
 
-//   Head = CreateLinkedList(arr, 0, 5);
+  Head = CreateLinkedList(arr, 0, 5);
 
-//   int k;
-//   cout << "Enter k : ";
-//   cin >> k;
+  int k;
+  cout << "Enter k : ";
+  cin >> k;
 
-//   cout << "Rotating Linked List by " << k << " rotation on right side : ";
+  cout << "Rotating Linked List by " << k << " rotation on right side : ";
 
-//   Head = rotateRight(Head, k);
+  Head = rotateRight(Head, k);
 
-//   while (Head)
-//   {
-//     cout << Head->val << " ";
-//     Head = Head->next;
-//   }
+  while (Head)
+  {
+    cout << Head->val << " ";
+    Head = Head->next;
+  }
 
-//   return 0;
-// }
+  return 0;
+}
+
+
+
+
 
 // * Check Palindrome Linked List :-
 

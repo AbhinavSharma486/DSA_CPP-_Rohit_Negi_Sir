@@ -63,7 +63,7 @@ int main()
 
 
 
-// & Example 2 = Exception handling : usint throw keywork and using try catch block
+// & Example 2 = Exception handling : usint throw key word and using try catch block
 
 #include <iostream>
 using namespace std;
